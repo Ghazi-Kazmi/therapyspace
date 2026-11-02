@@ -52,7 +52,7 @@ Create a `.env` file in the root directory (if you want to change the API URL):
 VITE_API_URL=http://localhost:5000/api
 ```
 
-If you don't create this file, it will default to `http://localhost:5000/api`.
+If you don't create this file, local development uses the Vite proxy at `/api`, which forwards requests to `http://localhost:5000`.
 
 ### Step 2: Install Frontend Dependencies (if not already done)
 ```bash
@@ -125,4 +125,3 @@ See `server/README.md` for detailed API documentation.
 ## Next Steps
 
 After setup, all user data (mood entries, journal entries, gratitude entries, etc.) will be stored in the PostgreSQL database instead of browser local storage. The data persists across sessions and browser changes.
-
