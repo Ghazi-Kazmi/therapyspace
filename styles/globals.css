@@ -1,0 +1,253 @@
+/* ─────────────────────────────────────────
+   GOOGLE FONTS — Inter (must be first)
+────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS — LIGHT MODE
+   Palette: warm off-white · deep charcoal · sage green
+────────────────────────────────────────── */
+:root {
+  --font-size: 16px;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --background: 40 18% 97%;         /* warm off-white */
+  --foreground: 220 18% 13%;        /* deep charcoal */
+
+  --card: 0 0% 100%;                /* pure white */
+  --card-foreground: 220 18% 13%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 18% 13%;
+
+  --primary: 158 32% 40%;           /* sage green */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 220 12% 56%;         /* muted slate */
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 40 12% 94%;              /* warm light gray */
+  --muted-foreground: 220 10% 48%;
+
+  --accent: 40 12% 94%;
+  --accent-foreground: 220 18% 13%;
+
+  --destructive: 4 72% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 220 12% 88%;            /* cool light gray border */
+  --input: 220 12% 90%;
+  --input-background: 40 12% 96%;
+
+  --ring: 158 32% 40%;
+
+  --chart-1: 158 32% 40%;
+  --chart-2: 200 30% 48%;
+  --chart-3: 28 35% 52%;
+  --chart-4: 258 25% 55%;
+  --chart-5: 4 40% 50%;
+
+  --radius: 0.75rem;
+
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 220 18% 13%;
+  --sidebar-primary: 158 32% 40%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 40 12% 94%;
+  --sidebar-accent-foreground: 220 18% 13%;
+  --sidebar-border: 220 12% 88%;
+  --sidebar-ring: 158 32% 40%;
+
+  --switch-background: 220 10% 72%;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Elevation */
+  --shadow-sm:  0 1px 3px rgba(30,40,60,0.06), 0 1px 2px rgba(30,40,60,0.04);
+  --shadow-md:  0 4px 12px rgba(30,40,60,0.08), 0 2px 4px rgba(30,40,60,0.04);
+  --shadow-lg:  0 10px 30px rgba(30,40,60,0.10), 0 4px 8px rgba(30,40,60,0.05);
+}
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS — DARK MODE
+────────────────────────────────────────── */
+.dark {
+  --background: 222 18% 10%;        /* deep slate */
+  --foreground: 40 15% 90%;         /* warm off-white */
+
+  --card: 222 16% 14%;
+  --card-foreground: 40 15% 90%;
+
+  --popover: 222 16% 14%;
+  --popover-foreground: 40 15% 90%;
+
+  --primary: 158 38% 52%;           /* lighter sage */
+  --primary-foreground: 222 18% 10%;
+
+  --secondary: 222 14% 30%;
+  --secondary-foreground: 40 15% 90%;
+
+  --muted: 222 14% 18%;
+  --muted-foreground: 220 10% 58%;
+
+  --accent: 222 14% 20%;
+  --accent-foreground: 40 15% 90%;
+
+  --destructive: 4 72% 58%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 222 12% 22%;
+  --input: 222 12% 20%;
+  --input-background: 222 14% 16%;
+
+  --ring: 158 38% 52%;
+
+  --chart-1: 158 38% 52%;
+  --chart-2: 200 35% 55%;
+  --chart-3: 28 38% 58%;
+  --chart-4: 258 28% 62%;
+  --chart-5: 4 40% 58%;
+
+  --sidebar: 222 16% 14%;
+  --sidebar-foreground: 40 15% 90%;
+  --sidebar-primary: 158 38% 52%;
+  --sidebar-primary-foreground: 222 18% 10%;
+  --sidebar-accent: 222 14% 18%;
+  --sidebar-accent-foreground: 40 15% 90%;
+  --sidebar-border: 222 12% 22%;
+  --sidebar-ring: 158 38% 52%;
+
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.30), 0 2px 4px rgba(0,0,0,0.18);
+  --shadow-lg:  0 10px 30px rgba(0,0,0,0.35), 0 4px 8px rgba(0,0,0,0.20);
+}
+
+/* ─────────────────────────────────────────
+   BASE LAYER
+────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+    font-family: var(--font-family);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY
+────────────────────────────────────────── */
+@layer base {
+  h1 { font-size: var(--text-2xl); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; }
+  h2 { font-size: var(--text-xl);  font-weight: 700; line-height: 1.2;  letter-spacing: -0.025em; }
+  h3 { font-size: var(--text-lg);  font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; }
+  h4 { font-size: var(--text-base); font-weight: 600; line-height: 1.5; }
+  p  { font-size: var(--text-base); font-weight: 400; line-height: 1.65; }
+  label  { font-size: var(--text-base); font-weight: 500; line-height: 1.5; }
+  button { font-size: var(--text-base); font-weight: 500; line-height: 1.5; }
+  input  { font-size: var(--text-base); font-weight: 400; line-height: 1.5; }
+}
+
+/* ─────────────────────────────────────────
+   FONT SIZE ACCESSIBILITY
+────────────────────────────────────────── */
+html.font-small  { --font-size: 14px; }
+html.font-large  { --font-size: 18px; }
+html.font-xlarge { --font-size: 20px; }
+
+/* ─────────────────────────────────────────
+   ANIMATIONS — subtle only
+────────────────────────────────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes bounce-dot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40%            { transform: scale(1);   opacity: 1; }
+}
+
+.animate-fade-in      { animation: fade-in 0.5s ease forwards; }
+.animate-fade-up      { animation: fade-up 0.6s ease forwards; }
+.animate-float        { animation: gentle-float 4s ease-in-out infinite; }
+.animate-spin-slow    { animation: spin-slow 12s linear infinite; }
+.animate-pulse-glow   { animation: pulse-soft 2.5s ease-in-out infinite; }
+
+/* Typing indicator dots */
+.typing-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: bounce-dot 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ─────────────────────────────────────────
+   CARD COMPONENT
+────────────────────────────────────────── */
+.surface-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease;
+}
+.surface-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ─────────────────────────────────────────
+   SCROLLBAR
+────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 5px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: hsl(var(--border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--secondary)); }
+
+/* ─────────────────────────────────────────
+   REDUCED MOTION
+────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
